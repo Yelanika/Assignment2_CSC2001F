@@ -10,10 +10,10 @@ public class LSAVLApp extends AVLTree
 	public static int counter = 0;
 	public static String[] temp = new String[2976];
 
-	public static BinaryTree CreateAVL()
+	public static AVLTree CreateAVL()
 	{
-		AVLTree bst = new AVLTree();
-		bst.BinaryTree();
+		AVLTree avl = new AVLTree();
+		avl.AVLTree();
 
 		try{
 			Scanner sc = new Scanner (new File("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt"));
@@ -22,9 +22,8 @@ public class LSAVLApp extends AVLTree
 			{
 				temp[counter] = sc.nextLine();
 				line = temp[counter].split("_");
-//-				System.out.println (line[1]);// + "  " + line[1] + "  " + line[2]);
-				bst.insert(line[0] + " " + line[1] + " " + line[2]);
-//				bst.insert(temp[counter]);
+				avl.insert(line[0] + " " + line[1] + " " + line[2]);
+
 				counter = counter + 1;
 			}
 
@@ -66,7 +65,7 @@ public class LSAVLApp extends AVLTree
 			String d = args[1];
 			String t = args[2];
 			String check = s + " " + d + " " + t;	
-			System.out.println(avl.printAreas(check));
+			//System.out.println(avl.printAreas(check));
 		}
 	}
 }

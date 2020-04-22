@@ -173,8 +173,8 @@ public class BinaryTree
 	      	if (node != null)
 	      	{
 	        	 visit (node);
-	        	 preOrder (node.getLeft ());
-	       		 preOrder (node.getRight ());
+	        	 preOrder (node.getLeft());
+	       		 preOrder (node.getRight());
 	     	 }   
 	}
 }
