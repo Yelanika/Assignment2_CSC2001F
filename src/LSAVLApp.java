@@ -31,7 +31,6 @@ public class LSAVLApp extends AVLTree
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Everything Works");
 		return avl;
 
 	}
@@ -65,7 +64,7 @@ public class LSAVLApp extends AVLTree
 			String d = args[1];
 			String t = args[2];
 			String check = s + " " + d + " " + t;	
-			//System.out.println(avl.printAreas(check));
+			System.out.println(avl.printAreas(check));
 		}
 	}
 }
