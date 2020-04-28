@@ -22,9 +22,6 @@ default: $(CLASS_FILES)
 clean:
 	rm -f ${BINDIR}/*.class
 
-run: 
-	java -cp bin AVLTreeTest
-
 docs: 
 	javadoc -classpath ${BINDIR} -d ${DOCDIR} ${SRCDIR}/*.java
 
