@@ -1,8 +1,13 @@
+//Yelanika Gunasekara 
+//Assignment2
+//13 March 2020
+
 public class AVLTree
 {
 
 	public BinaryTreeNode<String> root; 
 	public String[] ls = new String[10];
+	public int opCount = 0;
 
 	public void AVLTree()
 	{
@@ -90,21 +95,13 @@ public class AVLTree
 
 	public String find ( String d, BinaryTreeNode<String> node )
 	{
-		//System.out.println(node);
 		ls = node.data.split("\\D");
-
-		System.out.println(node.data);
 		
 		String s = ls[0];
 		String dx = ls[1];
 		String t = ls[2];
 
-		//System.out.println(ls.length);
-		//System.out.println
-
 		String hold = s + " " + dx + " " + t;
-
-		//System.out.println(hold + " " + ls[3]);
 
 		String temp = "Areas: ";
 
@@ -115,6 +112,7 @@ public class AVLTree
 
 		if (cmp == 0)
 		{	
+			opCount++;
 			String ls_n[];
 			ls_n = node.data.split(",");		
 
@@ -152,10 +150,12 @@ public class AVLTree
 			}
 
 			System.out.println(temp);
+			System.out.println("OpCount: " + Count());
 			return "";
 		}
 		else if ((cmp < 0))
 		{
+			opCount++;
 			if (node.left == null) 
 				return null;
 			else
@@ -166,6 +166,7 @@ public class AVLTree
 		}
 		else
 		{
+			opCount++;
 			if (node.right == null) 
 				return null; 
 			else
@@ -200,5 +201,11 @@ public class AVLTree
 			preOrder(node.getRight());
 		}
 	}
+
+	public int Count()
+	{
+		return opCount;
+	}
+
 }
 

@@ -1,12 +1,12 @@
-import java.io.FileNotFoundException;
-// Hussein's Binary Tree
-// 26 March 2017
-// Hussein Suleman
+//Yelanika Gunasekara 
+//Assignment2
+//13 March 2020
 
 public class BinaryTree 
 {
 	public BinaryTreeNode<String> root;
 	public String[] ls = new String[10];
+	public int opCount = 0;
 
 	public void BinaryTree ()
 	{
@@ -72,21 +72,13 @@ public class BinaryTree
 
 	public String find (String d, BinaryTreeNode<String> node)
 	{	
-		//System.out.println(node);
 		ls = node.data.split("\\D");
-
-		System.out.println(node.data);
 		
 		String s = ls[0];
 		String dx = ls[1];
 		String t = ls[2];
 
-		//System.out.println(ls.length);
-		//System.out.println
-
 		String hold = s + " " + dx + " " + t;
-
-		//System.out.println(hold + " " + ls[3]);
 
 		String temp = "Areas: ";
 
@@ -97,6 +89,7 @@ public class BinaryTree
 
 		if (cmp == 0)
 		{	
+			opCount++;
 			String ls_n[];
 			ls_n = node.data.split(",");		
 
@@ -128,16 +121,17 @@ public class BinaryTree
 			}
 			else if (ls[0].equals("8"))
 			{
-
 				temp = temp + ls[3]+ " " + ls_n[1] + " " + ls_n[2] + " " + ls_n[3] + " " + ls_n[4] + " " + ls_n[5] + " " + ls_n[6] + " " + ls_n[7];
 				
 			}
 
 			System.out.println(temp);
+			System.out.println("OpCount: " + Count());
 			return "";
 		}
 		else if ((cmp < 0))
 		{
+			opCount++;
 			if (node.left == null) 
 				return null;
 			else
@@ -148,6 +142,7 @@ public class BinaryTree
 		}
 		else
 		{
+			opCount++;
 			if (node.right == null) 
 				return null; 
 			else
@@ -176,5 +171,10 @@ public class BinaryTree
 	        	 preOrder (node.getLeft());
 	       		 preOrder (node.getRight());
 	     	 }   
+	}
+
+	public int Count()
+	{
+		return opCount;
 	}
 }

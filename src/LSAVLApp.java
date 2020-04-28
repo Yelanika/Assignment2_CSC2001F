@@ -1,3 +1,7 @@
+//Yelanika Gunasekara 
+//Assignment2
+//13 March 2020
+
 import java.io.FileReader;
 import java.util.Scanner;
 import java.io.File;
@@ -17,13 +21,12 @@ public class LSAVLApp extends AVLTree
 
 		try{
 			Scanner sc = new Scanner (new File("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt"));
-	
-			while (sc.hasNext())
+
+			for (int i=0; i < 2976; i++)	
 			{
 				temp[counter] = sc.nextLine();
 				line = temp[counter].split("_");
 				avl.insert(line[0] + " " + line[1] + " " + line[2]);
-
 				counter = counter + 1;
 			}
 
@@ -35,29 +38,15 @@ public class LSAVLApp extends AVLTree
 
 	}
 
-	public static String test(String d)
-	{
-		String result = "";
-		if (d.length() > 7);
-		{
-			int len = d.length();
-			
-			for (int i = 8; i < len; i++)
-			{
-				result = result + d.charAt(i);
-			}
-		}
-			
-		return result;
-	}
 
 	public static void main(String[] args)
 	{
 		avl = CreateAVL();
-//		bst.printAllAreas();
 	
 		if (args.length == 0)
+		{
 			avl.printAllAreas();
+		}
 		else
 		{
 			String s = args[0];

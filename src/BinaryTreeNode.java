@@ -1,6 +1,6 @@
-// Hussein's Binary Tree
-// 26 March 2017
-// Hussein Suleman
+//Yelanika Gunasekara 
+//Assignment2
+//13 March 2020
 
 public class BinaryTreeNode<String>
 {
